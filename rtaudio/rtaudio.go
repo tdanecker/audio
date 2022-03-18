@@ -5,11 +5,11 @@ package rtaudio
 #cgo CXXFLAGS: -g
 #cgo LDFLAGS: -lstdc++ -g
 
-#cgo linux CXXFLAGS: -D__LINUX_ALSA__
-#cgo linux LDFLAGS: -lm -lasound -pthread
+#cgo linux CXXFLAGS: -D__UNIX_JACK__
+#cgo linux LDFLAGS: -lm -ljack -pthread
 
-#cgo windows CXXFLAGS: -D__WINDOWS_WASAPI__
-#cgo windows LDFLAGS: -lm -luuid -lksuser -lwinmm -lole32
+#cgo windows CXXFLAGS: -D__WINDOWS_ASIO__
+#cgo windows LDFLAGS: -lm -lole32
 
 #cgo darwin CXXFLAGS: -D__MACOSX_CORE__
 #cgo darwin LDFLAGS: -framework CoreAudio -framework CoreFoundation
